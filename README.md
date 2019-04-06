@@ -1,5 +1,6 @@
 # UnityScriptableObjects
 A simple extendable collection of scritpable objects
+See the Talk of Ryan Hipple for explanations how and why to use: https://www.youtube.com/watch?v=raQ3iHhE_Kk
 
 ```
 // ----------------------------------------------------------------------------
@@ -11,3 +12,4 @@ A simple extendable collection of scritpable objects
 // Author: Nerzal
 // ----------------------------------------------------------------------------
 ```
+
