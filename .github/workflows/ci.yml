@@ -19,13 +19,13 @@ jobs:
       - name: Setup Unity
         uses: game-ci/unity-builder@v4
         with:
-          unityVersion: 2023.3.0f1
+          unityVersion: 6000.4.2f1
           targetPlatform: StandaloneWindows64
 
       - name: Run tests
         uses: game-ci/unity-test-runner@v4
         with:
-          unityVersion: 2023.3.0f1
+          unityVersion: 6000.4.2f1
           testMode: editmode
           projectPath: .
           githubToken: ${{ secrets.GITHUB_TOKEN }}
