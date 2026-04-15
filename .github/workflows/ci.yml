@@ -16,14 +16,30 @@ jobs:
         with:
           lfs: true
 
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
       - name: Setup Unity
-        uses: game-ci/unity-builder@v4
+        uses: game-ci/unity-builder@v5
         with:
           unityVersion: 6000.4.2f1
           targetPlatform: StandaloneWindows64
 
+      - name: Activate Unity License
+        uses: game-ci/unity-activate@v1
+        with:
+          unityUsername: ${{ secrets.UNITY_USERNAME }}
+          unityPassword: ${{ secrets.UNITY_PASSWORD }}
+          unitySerial: ${{ secrets.UNITY_SERIAL }}
+          unityLicense: ${{ secrets.UNITY_LICENSE }}
+
       - name: Run tests
-        uses: game-ci/unity-test-runner@v4
+        uses: game-ci/unity-test-runner@v5
         with:
           unityVersion: 6000.4.2f1
           testMode: editmode
