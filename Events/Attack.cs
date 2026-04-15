@@ -10,8 +10,8 @@ namespace Events
         // Ctor
         public Attack(int instanceId, float damage)
         {
-            this.InstanceID = instanceId;
-            this.Damage = damage;
+            InstanceID = instanceId;
+            Damage = damage;
         }
     }
 }

@@ -7,15 +7,15 @@ namespace Events {
 
 
     private void OnEnable() {
-      this._event.RegisterListener(this);
+            _event.RegisterListener(this);
     }
 
     private void OnDisable() {
-      this._event.UnregisterListener(this);
+      _event.UnregisterListener(this);
     }
 
     public override void OnEventRaised(string arg) {
-      this._unityEvent?.Invoke(arg);
+      _unityEvent?.Invoke(arg);
     }
   }
 }

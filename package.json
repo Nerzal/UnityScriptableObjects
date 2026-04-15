@@ -1,0 +1,11 @@
+{
+  "name": "com.nerzal.unityscriptableobjects",
+  "version": "1.0.0",
+  "displayName": "Unity Scriptable Objects",
+  "description": "A library for ScriptableObject-based variables and events.",
+  "unity": "2023.3",
+  "author": {
+    "name": "Nerzal"
+  },
+  "dependencies": {}
+}

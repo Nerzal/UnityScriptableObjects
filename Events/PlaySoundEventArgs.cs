@@ -15,8 +15,8 @@ namespace Events
         // PlaySoundEventArgs is a ctor
         public PlaySoundEventArgs(int receiverInstanceId, AudioClip sound)
         {
-            this.ReceiverInstanceID = receiverInstanceId;
-            this.Sound = sound;
+            ReceiverInstanceID = receiverInstanceId;
+            Sound = sound;
         }
     }
 }

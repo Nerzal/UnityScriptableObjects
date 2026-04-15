@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Unity
+        uses: game-ci/unity-builder@v4
+        with:
+          unityVersion: 2023.3.0f1
+          targetPlatform: StandaloneWindows64
+
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v4
+        with:
+          unityVersion: 2023.3.0f1
+          testMode: editmode
+          projectPath: .
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Test results
+          path: artifacts

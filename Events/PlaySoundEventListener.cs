@@ -9,17 +9,17 @@ namespace Events {
 
         private void OnEnable()
         {
-            this._gameEvent.RegisterListener(this);
+            _gameEvent.RegisterListener(this);
         }
 
         private void OnDisable()
         {
-            this._gameEvent.UnregisterListener(this);
+            _gameEvent.UnregisterListener(this);
         }
 
         public override void OnEventRaised(PlaySoundEventArgs arg)
         {
-            this._unityEvent?.Invoke(arg);
+            _unityEvent?.Invoke(arg);
         }
     }
 }

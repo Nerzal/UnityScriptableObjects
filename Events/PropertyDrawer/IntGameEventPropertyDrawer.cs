@@ -4,6 +4,10 @@ using UnityEngine;
 using Variables;
 
 namespace Assets.Scripts.NoobyGames.Events.PropertyDrawer {
+    /// <summary>
+    /// Custom property drawer for IntGameEvent ScriptableObjects in the Unity Inspector.
+    /// Provides an input field for the event argument and a button to raise the event.
+    /// </summary>
     [CustomPropertyDrawer(typeof(IntGameEvent))]
     public class IntGameEventPropertyDrawer : UnityEditor.PropertyDrawer
     {
@@ -11,7 +15,12 @@ namespace Assets.Scripts.NoobyGames.Events.PropertyDrawer {
         private SerializedProperty _serializedIntVariable;
         public int instanceId;
 
-        // Draw the property inside the given rect
+        /// <summary>
+        /// Draws the property in the Inspector, including an input field and a "Raise Event" button.
+        /// </summary>
+        /// <param name="position">The rectangle on the screen to use for the property GUI.</param>
+        /// <param name="property">The SerializedProperty to make the custom GUI for.</param>
+        /// <param name="label">The label of this property.</param>
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             // Using BeginProperty / EndProperty on the parent property means that
@@ -46,6 +55,12 @@ namespace Assets.Scripts.NoobyGames.Events.PropertyDrawer {
             EditorGUI.EndProperty();
         }
 
+        /// <summary>
+        /// Calculates the height of the property in the Inspector.
+        /// </summary>
+        /// <param name="property">The SerializedProperty.</param>
+        /// <param name="label">The label of this property.</param>
+        /// <returns>The height in pixels.</returns>
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             return base.GetPropertyHeight(property, label) + 80;
