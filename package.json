@@ -1,6 +1,6 @@
 {
   "name": "com.noobygames.unityscriptableobjects",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Unity Scriptable Objects",
   "description": "A library for ScriptableObject-based variables and events.",
   "unity": "6000.4",
