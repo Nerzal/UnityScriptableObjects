@@ -1,0 +1,38 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]serSettings/
+
+# Memory dumps
+*.apk
+*.unitypackage
+*.bundle
+
+# Visual Studio / Rider / VS Code Dateien
+.vs/
+.gradle/
+ExportedObj/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+*.pdb
+*.opendb
+*.VC.db
+
+# OS spezifisch
+.DS_Store
+Thumbs.db
+
+# Crashlytics / Analyse-Tools
+crashlytics-build.properties
